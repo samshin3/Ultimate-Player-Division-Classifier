@@ -13,4 +13,4 @@ Original Source: Gavin Cassidy
 
 To use this notebook, clone the repository and the dataset from the github, make sure to run this code to ensure you have all the dependencies to run the notebook:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
