@@ -9,6 +9,16 @@ https://data.scorenetwork.org/disc_sports/ultimate_college_championship-2024.htm
 
 Original Source: Gavin Cassidy
 
+# Team Division Level Classifier
+
+I found that my model was capped at a 60% accuracy. So I have created a new model that determines a team's division level.
+
+This model was trained using the 2024 championship statistics and tested with the 2025 statistics that I scrapped from the USA Ultimate website:
+Division 1 Data: https://play.usaultimate.org/events/2025-USA-Ultimate-College-Championships
+Division 3 Data: https://play.usaultimate.org/events/2025-USA-Ultimate-D3-College-Championships
+
+With this model I have found more success, with the Decision Tree yielding a 86% accuracy for the male database, and 72% accuracy for the female database
+
 # Using this Notebook
 
 To use this notebook, clone the repository and the dataset from the github, make sure to run this code to ensure you have all the dependencies to run the notebook:
