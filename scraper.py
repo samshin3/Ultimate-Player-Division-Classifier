@@ -30,7 +30,7 @@ def frisbee_scraper(root="https://play.usaultimate.org", url=None, level="", gen
     df.reset_index(drop=True)
     df['level'] = level
     df['gender'] = gender
-    df['division'] = level + gender
+    df['division'] = level + " " + gender
 
     return df
 
