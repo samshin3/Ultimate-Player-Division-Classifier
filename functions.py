@@ -5,14 +5,23 @@ def make_bipolar(cell):
         return 1
     return -1
 
-def prepare_data(df, div):
+def make_binary(cell):
+    if cell == 'Division 1':
+        return 1
+    return -1
+
+def prepare_data(df, div, classification='bipolar'):
     df_mean = df.groupby('team_name').mean(numeric_only=True)
     df_mean.columns = [col + ' mean' for col in df_mean.columns]
     df_stdev = df.groupby('team_name').std(numeric_only=True)
     df_stdev.columns = [col + ' stdev' for col in df_stdev.columns]
     new_df = df_mean.join(df_stdev)
     new_df = new_df.join(div['level'])
-    new_df['level'] = new_df['level'].apply(make_bipolar)
+    
+    if classification == 'bipolar':
+        new_df['level'] = new_df['level'].apply(make_bipolar)
+    else:
+        new_df['level'] = new_df['level'].apply(make_binary)
     return new_df
 
 def get_results(prediction, actual):
