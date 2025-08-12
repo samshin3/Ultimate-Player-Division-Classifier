@@ -9,6 +9,8 @@ https://data.scorenetwork.org/disc_sports/ultimate_college_championship-2024.htm
 
 Original Source: Gavin Cassidy
 
+Note: As of 11/08/2025 I have concluded that it is more appropriate to determine the division level of a team rather than each individual player. I have created a new model that is trained to distinguish each teams divisions.
+
 # Team Division Level Classifier
 
 I found that my model was capped at a 60% accuracy. So I have created a new model that determines a team's division level.
