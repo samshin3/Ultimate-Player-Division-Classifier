@@ -8,7 +8,7 @@ def make_bipolar(cell):
 def make_binary(cell):
     if cell == 'Division 1':
         return 1
-    return -1
+    return 0
 
 def prepare_data(df, div, classification='bipolar'):
     df_mean = df.groupby('team_name').mean(numeric_only=True)
@@ -17,7 +17,6 @@ def prepare_data(df, div, classification='bipolar'):
     df_stdev.columns = [col + ' stdev' for col in df_stdev.columns]
     new_df = df_mean.join(df_stdev)
     new_df = new_df.join(div['level'])
-    
     if classification == 'bipolar':
         new_df['level'] = new_df['level'].apply(make_bipolar)
     else:
